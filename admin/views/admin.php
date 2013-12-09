@@ -18,6 +18,6 @@
 	<?php screen_icon(); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-	<?php printf(__('<p>This plugin doesn\'t currently have any settings to config, the plugin is a simple one. <br />This plugin is was written by <a href="%2$s" title="%1$s">%1$s</a>.</p>'),'Jonathan Harris','http://www.jonathandavidharris.co.uk');?>
+	<?php printf(__('<p>This plugin doesn\'t currently have any settings to config, the plugin is a simple one. <br /><br />This plugin was written by <a href="%2$s" title="%1$s">%1$s</a>.</p>'),'Jonathan Harris','http://www.jonathandavidharris.co.uk', 'custom-post-type-rss-feed');?>
 
 </div>

@@ -13,10 +13,6 @@
  * Plugin class. This class should ideally be used to work with the
  * administrative side of the WordPress site.
  *
- * If you're interested in introducing public-facing
- * functionality, then refer to `class-custom-post-type-rss-feeds.php`
- *
- *
  * @package Custom_Post_Type_RSS_Feeds_Admin
  * @author  Jonathan Harris <jon@computingcorner.co.uk>
  */
@@ -52,7 +48,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	private function __construct() {
 		
 		/*
-		 * TODO :
 		 * 
 		 * - Decomment following lines if the admin class should only be available for super admins
 		 */
@@ -63,7 +58,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		/*
 		 * Call $plugin_slug from public plugin class.
 		 *
-		 * TODO:
 		 *
 		 * - Rename "Custom_Post_Type_RSS_Feeds" to the name of your initial plugin class
 		 *
@@ -72,8 +66,8 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
 		// Load admin style sheet and JavaScript.
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -83,7 +77,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
 
-		add_action( 'admin_notices', array( $this,  'my_admin_notice' ) );
 	}
 
 	/**
@@ -96,7 +89,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	public static function get_instance() {
 		
 		/*
-		 * TODO :
 		 * 
 		 * - Decomment following lines if the admin class should only be available for super admins
 		 */
@@ -114,10 +106,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 
 	/**
 	 * Register and enqueue admin-specific style sheet.
-	 *
-	 * TODO:
-	 *
-	 * - Rename "Custom_Post_Type_RSS_Feeds" to the name your plugin
 	 *
 	 * @since     1.0.0
 	 *
@@ -139,9 +127,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * TODO:
-	 *
-	 * - Rename "Custom_Post_Type_RSS_Feeds" to the name your plugin
 	 *
 	 * @since     1.0.0
 	 *
@@ -168,18 +153,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	public function add_plugin_admin_menu() {
 
 		/*
-		 * Add a settings page for this plugin to the Settings menu.
-		 *
-		 * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
-		 *
-		 *        Administration Menus: http://codex.wordpress.org/Administration_Menus
-		 *
-		 * TODO:
-		 *
-		 * - Change 'Page Title' to the title of your plugin admin page
-		 * - Change 'Menu Text' to the text for menu item for the plugin settings page
-		 * - Change 'manage_options' to the capability you see fit
-		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
 			__( $this->page_title, $this->plugin_slug ),
@@ -214,41 +187,6 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 			$links
 		);
 
-	}
-
-	/**
-	 * NOTE:     Actions are points in the execution of a page or process
-	 *           lifecycle that WordPress fires.
-	 *
-	 *           Actions:    http://codex.wordpress.org/Plugin_API#Actions
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function action_method_name() {
-		// TODO: Define your action hook callback here
-	}
-
-	/**
-	 * NOTE:     Filters are points of execution in which WordPress modifies data
-	 *           before saving it or sending it to the browser.
-	 *
-	 *           Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
-		// TODO: Define your filter hook callback here
-	}
-	
-	public function my_admin_notice() {
-	$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
-	    ?>
-	    <div class="updated">
-	        <p><?php echo $plugin_basename; ?></p>
-	    </div>
-	    <?php
 	}
 
 }
