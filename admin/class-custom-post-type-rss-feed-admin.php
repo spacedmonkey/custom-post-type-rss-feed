@@ -16,7 +16,6 @@
  * If you're interested in introducing public-facing
  * functionality, then refer to `class-custom-post-type-rss-feeds.php`
  *
- * TODO: Rename this class to a proper name for your plugin.
  *
  * @package Custom_Post_Type_RSS_Feeds_Admin
  * @author  Jonathan Harris <jon@computingcorner.co.uk>
@@ -40,6 +39,9 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	 * @var      string
 	 */
 	protected $plugin_screen_hook_suffix = null;
+	
+	protected $menu_name = 'Custom Post Type RSS feed';
+	protected $page_title = 'Custom Post Type RSS feed';
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
@@ -54,9 +56,9 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		 * 
 		 * - Decomment following lines if the admin class should only be available for super admins
 		 */
-		/* if( ! is_super_admin() ) {
+		 if( ! is_super_admin() ) {
 			return;
-		} */
+		 } 
 
 		/*
 		 * Call $plugin_slug from public plugin class.
@@ -77,18 +79,11 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
-		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
+		$plugin_basename = ( dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/' . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
-		/*
-		 * Define custom functionality.
-		 *
-		 * Read more about actions and filters:
-		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 
+		add_action( 'admin_notices', array( $this,  'my_admin_notice' ) );
 	}
 
 	/**
@@ -187,8 +182,8 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', $this->plugin_slug ),
-			__( 'Menu Text', $this->plugin_slug ),
+			__( $this->page_title, $this->plugin_slug ),
+			__( $this->menu_name, $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
@@ -211,7 +206,7 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_action_links( $links ) {
-
+	
 		return array_merge(
 			array(
 				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
@@ -245,6 +240,15 @@ class Custom_Post_Type_RSS_Feeds_Admin {
 	 */
 	public function filter_method_name() {
 		// TODO: Define your filter hook callback here
+	}
+	
+	public function my_admin_notice() {
+	$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
+	    ?>
+	    <div class="updated">
+	        <p><?php echo $plugin_basename; ?></p>
+	    </div>
+	    <?php
 	}
 
 }

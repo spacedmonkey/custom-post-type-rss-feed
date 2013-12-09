@@ -16,7 +16,6 @@
  * If you're interested in introducing administrative or dashboard
  * functionality, then refer to `class-custom-post-type-rss-feeds-admin.php`
  *
- * TODO: Rename this class to a proper name for your plugin.
  *
  * @package Custom_Post_Type_RSS_Feeds
  * @author  Jonathan Harris <jon@computingcorner.co.uk>
@@ -46,7 +45,7 @@ class Custom_Post_Type_RSS_Feeds {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'custom-post-type-rss-feeds';
+	protected $plugin_slug = 'custom-post-type-rss-feed';
 
 	/**
 	 * Instance of this class.
@@ -72,14 +71,13 @@ class Custom_Post_Type_RSS_Feeds {
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		/* Define custom functionality.
 		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		add_action( 'wp_head', array( $this, 'action_method_name' ) );
 
 	}
 
@@ -234,7 +232,8 @@ class Custom_Post_Type_RSS_Feeds {
 	 * @since    1.0.0
 	 */
 	private static function single_activate() {
-		// TODO: Define activation functionality here
+		global $wp_rewrite;
+		$wp_rewrite->flush_rules();
 	}
 
 	/**
@@ -243,7 +242,8 @@ class Custom_Post_Type_RSS_Feeds {
 	 * @since    1.0.0
 	 */
 	private static function single_deactivate() {
-		// TODO: Define deactivation functionality here
+		global $wp_rewrite;
+		$wp_rewrite->flush_rules();
 	}
 
 	/**
@@ -290,20 +290,31 @@ class Custom_Post_Type_RSS_Feeds {
 	 * @since    1.0.0
 	 */
 	public function action_method_name() {
-		// TODO: Define your action hook callback here
-	}
-
-	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 *        Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *        Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
-		// TODO: Define your filter hook callback here
+		$domain = $this->plugin_slug;
+		$siteName = get_bloginfo("name");
+		
+		$args=array(
+	  		'public'   => true,
+	  		'has_archive' => true,
+	  		'_builtin' => false
+		); 
+	
+		$list_post_types_raw = get_post_types($args);
+		$list_post_types = array_values($list_post_types_raw);
+		
+		if ( is_post_type_archive() ) {
+			unset($list_post_types[get_post_type()]);
+		}
+		
+		$list_post_types = apply_filters($domain.'-list',$list_post_types);
+		
+		foreach($list_post_types as $id => $vale){
+			$feed = get_post_type_archive_feed_link( $vale );
+			$obj = get_post_type_object($vale);
+			$name = $obj->labels->name;
+			$feedname = sprintf(__('%1$s &raquo; %2$s Feed', $domain), $siteName, $name ); 
+			printf(__('<link rel="%1$s" type="%2$s" title="%3$s" href="%4$s" />', $domain),"alternate","application/rss+xml",$feedname,$feed);
+		}
 	}
 
 }

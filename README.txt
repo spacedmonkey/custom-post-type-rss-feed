@@ -1,7 +1,7 @@
 === Plugin Name ===
 
 Contributors: spacedmonkey
-Plugin Name: Custom Post Type RSS Feed
+Plugin Name: Custom Post Type RSS feed
 Plugin URI: http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/
 Tags: rss, post types, feed
 Author URI: http://jonthandavidharris.co.uk/
@@ -41,4 +41,4 @@ Final release and bug fixs.
 
 == Upgrade Notice ==
 
-The current version of Custom Post Type RSS Feed requires WordPress 3.1 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
+The current version of Custom Post Type RSS feed requires WordPress 3.1 or higher. If you use older version of WordPress, you need to upgrade WordPress first.
