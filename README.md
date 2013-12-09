@@ -1,6 +1,6 @@
 # Custom Post Type RSS Feed 
 
-The Custom Post Type RSS Feed serves as a foundation and aims to provide a clear and consistent guide for building your WordPress plugins.
+This is a simple plugin designed to make it super easy to add custom post types RSS feed into a theme. This plugin automatically queries post types that have archives enabled and generates a markup and adds it to head. 
 
 ## Features
 
@@ -21,10 +21,9 @@ The Custom Post Type RSS Feed includes the following files:
 
 ## Installation
 
-1. Copy the `plugin-name` directory into your `wp-content/plugins` directory
+1. Copy the `custom_post_type_rss` directory into your `wp-content/plugins` directory
 2. Navigate to the *Plugins* dashboard page
-3. Locate the menu item that reads *TODO*
-4. Click on *Activate*
+3. Click on *Activate*
 
 This will activate the Custom Post Type RSS Feed. Because the Boilerplate has no real functionality, nothing will be added to WordPress; however, this demonstrates exactly how your plugin should behave while you're working with the Boilerplate.
 
@@ -40,25 +39,6 @@ there are tools that are recommended for providing correct, translatable files:
 * [i18n](https://github.com/grappler/i18n)
 
 Any of the above tools should provide you with the proper tooling to localize the plugin.
-
-### GitHub Updater
-
-The Custom Post Type RSS Feed includes native support for the [GitHub Updater](https://github.com/afragen/github-updater) which allows you to provide updates to your WordPress plugin from GitHub.
-
-This uses a new tag in the plugin header:
-
->  `* GitHub Plugin URI: https://github.com/<owner>/<repo>`
-
-Here's how to take advantage of this feature:
-
-1. Install the [GitHub Updater](https://github.com/afragen/github-updater)
-2. Replace `<owner>` with your username and `<repo>` with the repository of your plugin
-3. Push commits to the master branch
-4. Enjoy your plugin being updated in the WordPress dashboard
-
-The current version of the GitHub Updater supports tags/branches - whichever has the highest number. It also supports different branches using the `GitHub Branch:` header. All that info is in [the project](https://github.com/afragen/github-updater)
-
-In future versions, there will be steps to specify branches or tags rather than the `master` branch.
 
 ## License
 
