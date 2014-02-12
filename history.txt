@@ -1,5 +1,10 @@
+Version 2 ( November 23th 2013 )
+--------------------------------------------------------------
 
-Version 0.1 ( September 17th 2011 )
+- Rewrite and tidy
+
+
+Version 1 ( September 17th 2011 )
 --------------------------------------------------------------
 
 - Initial Release.

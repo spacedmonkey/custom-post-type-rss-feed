@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Custom Post Type RSS Feed ===
 
 Contributors: spacedmonkey
 Plugin Name: Custom Post Type RSS feed
@@ -8,7 +8,7 @@ Author URI: http://jonthandavidharris.co.uk/
 Author:  Jonathan Harris
 Requires at least: 3.2, PHP5.2
 Tested up to: 3.4.1
-Stable tag: 1.1
+Stable tag: 2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
