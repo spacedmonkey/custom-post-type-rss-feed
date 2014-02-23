@@ -34,11 +34,11 @@ This section describes how to install the plugin and get it working.
 
 ## GitHub Updater
 
-The Super Simple Events includes native support for the [GitHub Updater](https://github.com/afragen/github-updater) which allows you to provide updates to your WordPress plugin from GitHub.
+The Custom Post Type RSS feed includes native support for the [GitHub Updater](https://github.com/afragen/github-updater) which allows you to provide updates to your WordPress plugin from GitHub.
 
 ## License
 
-The Super Simple Events is licensed under the GPL v2 or later.
+The Custom Post Type RSS feed is licensed under the GPL v2 or later.
 
 > This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
