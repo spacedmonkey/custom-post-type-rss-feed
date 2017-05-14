@@ -2,7 +2,7 @@
 
 Contributors: spacedmonkey
 Plugin Name: Custom Post Type RSS feed
-Plugin URI: http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/
+Plugin URI: http://www.spacedmonkey.com/scripts/custom-post-type-rss-feeds/
 Tags: rss, post types, feed
 Author URI: http://jonthandavidharris.co.uk/
 Author:  Jonathan Harris
@@ -18,7 +18,7 @@ This is a simple plugin designed to make it super easy to add custom post types 
 
 This is a simple plugin designed to make it super easy to add custom post types RSS feed into a theme. This plugin automatically queries post types that have archives enabled and generates a markup and adds it to head. 
 
-Read more about this plugin at it's [homepage](http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/) .
+Read more about this plugin at it's [homepage](http://www.spacedmonkey.com/scripts/custom-post-type-rss-feeds/) .
 
 == Installation ==
 
@@ -27,7 +27,7 @@ Read more about this plugin at it's [homepage](http://www.jonathandavidharris.co
 
 == Changelog ==
 
-The full changelog can be found [here](http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/).
+The full changelog can be found [here](http://www.spacedmonkey.com/scripts/custom-post-type-rss-feeds/).
 
 = Version 1.1 =
 Updated to added support for Wordpress 3.4

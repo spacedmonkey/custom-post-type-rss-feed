@@ -2,7 +2,7 @@
 
 This is a simple plugin designed to make it super easy to add custom post types RSS feed into a theme. This plugin automatically queries post types that have archives enabled and generates a markup and adds it to head.
 
-If you wish to follow the development of this plugin, view the code on the official plugin [website](http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/ "website") or follow me on twitter [@thespacedmonkey](https://twitter.com/thespacedmonkey)
+If you wish to follow the development of this plugin, view the code on the official plugin [website](http://www.spacedmonkey.com/scripts/custom-post-type-rss-feeds/ "website") or follow me on twitter [@thespacedmonkey](https://twitter.com/thespacedmonkey)
 
 
 ## Installation

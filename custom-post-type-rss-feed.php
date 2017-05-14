@@ -7,13 +7,13 @@
  * @package   Custom_Post_Type_RSS_Feeds
  * @author    Jonathan Harris <jon@computingcorner.co.uk>
  * @license   GPL-2.0+
- * @link      http://www.jonathandavidharris.co.uk
+ * @link      http://www.spacedmonkey.com
  * @copyright 2013 Jonathan Harris
  *
  *
  * @wordpress-plugin
  * Plugin Name:       Custom Post Type RSS feed
- * Plugin URI:        http://www.jonathandavidharris.co.uk/scripts/custom-post-type-rss-feeds/#main
+ * Plugin URI:        http://www.spacedmonkey.com/scripts/custom-post-type-rss-feeds/#main
  * Description: 	  A very simply plugin that add rss feeds for custom post types that have the archives set to true
  * Version:           2.0.0
  * Revision Date: 	  NOV 19, 2013

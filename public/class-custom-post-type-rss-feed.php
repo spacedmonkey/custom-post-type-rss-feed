@@ -5,7 +5,7 @@
  * @package   Custom_Post_Type_RSS_Feeds
  * @author    Jonathan Harris <jon@computingcorner.co.uk>
  * @license   GPL-2.0+
- * @link      http://www.jonathandavidharris.co.uk
+ * @link      http://www.spacedmonkey.com
  * @copyright 2013 Jonathan Harris
  */
 
